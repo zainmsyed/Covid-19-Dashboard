@@ -5,3 +5,5 @@ Covid-19 Dashboard
 ##### This dashboard was created using [pandas](https://pandas.pydata.org/), [plotly](https://plotly.com/), and [streamlit](https://streamlit.io/)
 
 ##### This dashboard updates daily 
+
+##### streamlit.py is where the application code is located
