@@ -65,19 +65,19 @@ vaxxed = (vacpercentage.round(2).loc['People_Fully_Vaccinated']*100)
 partialvaxxed = (vacpercentage.round(2).loc['People_Partially_Vaccinated']*100)
 
 
-
-## PICK STATE 
-st.title('Covid-19 Dashboard')
+## TITLE 
+st.title('Covid-19 Dashboard by Zain Syed')
 st.markdown('''
 ###### Covid-19 data is obtained from Johns Hopkins Center for Systems Science and Engineering (CSSE) [github page](https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/README.md#daily-reports-csse_covid_19_daily_reports) and population data for countries is obtained from [Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population) 
 ###### This dashboard was created using [pandas](https://pandas.pydata.org/), [plotly](https://plotly.com/), and [streamlit](https://streamlit.io/)
-
-###### This dashboard updates daily 
+###### This dashboard updates daily
+---
+###### [github](https://github.com/zainmsyed) [linkedin](https://www.linkedin.com/in/zainmsyed/)
 ---
 ''')
 
 
-st.header('United States Vacination Statistics')\
+st.header('United States Vacination Statistics')
 
 hcol1, hcol2, hcol3, hcol4 = st.columns(4)
 
@@ -85,6 +85,9 @@ with hcol2:
     st.metric('Vaccinated', f'{vaxxed} %')
 with hcol3:
     st.metric('Partially Vaccinated', f'{partialvaxxed} %')
+st.markdown('''---''')
+
+st.header('Number of Confirmed Cases and Deaths per State(s)')
 
 
 # st.dataframe(df_death_stategroup)
@@ -114,6 +117,7 @@ fig_state_death.update_yaxes(title_text='# Of People (thousand)')
 
 
 #### ROW 1 LAYOUT ####
+
 r1col1, r1col2 = st.columns(2)
 
 with r1col1:
@@ -127,8 +131,10 @@ with r1col2:
 
 
 
-
 ## PICK COUNTY
+st.header('Number of Confirmed Cases and Death per County/Counties in State')
+
+
 state_county = st.selectbox(
     label='Select State',
     options=df_confirmed_dropped['Province_State'].unique()
@@ -187,4 +193,4 @@ with r3col1:
     st.plotly_chart(fig_county_confimed, use_container_width=True)
 
 with r3col2:
-    st.plotly_chart(fig_county_death, use_container_width=True)
+    st.plotly_chart(fig_county_death, use_container_width=True)`
