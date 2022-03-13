@@ -193,4 +193,4 @@ with r3col1:
     st.plotly_chart(fig_county_confimed, use_container_width=True)
 
 with r3col2:
-    st.plotly_chart(fig_county_death, use_container_width=True)`
+    st.plotly_chart(fig_county_death, use_container_width=True)
